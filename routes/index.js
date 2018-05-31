@@ -17,7 +17,7 @@ router.get('/l', function (req, res, next) {
 
 
 router.post('/api/post', function (req, res, next) {
-    let msgid = randomstring.generate(20)
+    let msgid = randomstring.generate(20);
     console.log("random============", msgid);
     console.log("body===========", req.body);
     if (!empty(req)) {

@@ -12,8 +12,16 @@ var app = express();
 
 
 mongoose.connect('mongodb://localhost/test')
+var db = mongoose.connection;
 
-
+// 连接成功
+db.on('open', function(){
+    console.log('MongoDB Connection Successed');
+});
+// 连接失败
+db.on('error', function(){
+    console.log('MongoDB Connection Error');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
