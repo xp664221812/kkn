@@ -3,7 +3,7 @@ $(document).ready(function () {
     if (!is_wxqq()) {
         $("#share").text("分享: " + u.u);
     }
-    joke();
+    // joke();
     if (document.referrer == "http://kkn.anet6.cc/") {
         $("#cc").hide();
     } else {

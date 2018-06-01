@@ -10,7 +10,18 @@ let userSchema = new Schema({
     nonce: {
         type: String
     },
-    msg: String,
+    msg: {
+        type: String
+    },
+    read: {
+        type: Number
+    },
+    ttl: {
+        type: Number
+    },
+    time: {
+        type:Number
+    }
 
 });
 // 将数据模型暴露出去

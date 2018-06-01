@@ -3,8 +3,14 @@ let Schema = mongoose.Schema;
 
 // 声明一个数据集 对象
 let viewsSchema = new Schema({
+    id: {
+        type: Number,
+        default: 1
+    },
+
     views: {
-        type: Number
+        type: Number,
+        default: 0
     }
 
 

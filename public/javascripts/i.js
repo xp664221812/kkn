@@ -42,10 +42,10 @@ function encrypt(Read, Plain) {
 
 function post(Read, Cipher, Nonce, Secret) {
     if (Read == 1) {
-        TTL = 3000;
+        TTL = 0;
     } else {
         READ = 10000000;
-        TTL = 600;
+        TTL = 1;
     }
     $.ajax({
         url: "/api/post",
@@ -54,12 +54,12 @@ function post(Read, Cipher, Nonce, Secret) {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (Data, Status) {
-            console.log(Status)
-
             console.log(Data)
-            TTL = Data.ttl;
+            // TTL = Data.ttl;
             $('.hide').show();
-            $("#url").text("http://kkn.anet6.cc/l?" + Data.msgid + "#" + Secret).autoHeight();
+            // $("#url").text("http://kkn.anet6.cc/l?" + Data.msgid + "#" + Secret).autoHeight();
+            $("#url").text("http://127.0.0.1:3000/l?" + Data.msgid + "#" + Secret).autoHeight();
+
             $("#total").text("您是第" + N + "个想看的人！");
         }
     });
