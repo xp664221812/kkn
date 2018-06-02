@@ -4,7 +4,7 @@
 # don’t expect other users to generate, like files created by your editor.
 
 
-.idea/
+.idea
 node_modules
 npm-debug.log
 package-lock.json
