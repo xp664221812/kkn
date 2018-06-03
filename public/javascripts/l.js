@@ -52,6 +52,7 @@ function read(MsgId, Password) {
         dataType: "json",
         success: function (Data, Status) {
             if (Data.msg != undefined) {
+                console.log('1111111111');
                 MsgB64 = Data.msg;
                 NonceB64 = Data.nonce;
                 SecretB64 = Password;
@@ -73,6 +74,8 @@ function read(MsgId, Password) {
                 $('#view').text(Word);
                 $('.hide').show();
             } else {
+                console.log('222222222222222222');
+
                 $("#message").text("!@#$%^&*()(*&^%$#@$%^&^%^&*");
                 $("#mbody").attr("class", "w3-panel w3-large w3-pale-red w3-leftbar w3-rightbar w3-border-blue hide");
                 $("#read").text("有给一个人看的消息，有会过期的消息！");

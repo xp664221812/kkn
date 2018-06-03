@@ -100,27 +100,36 @@ router.get('/api/get/:msgid', function (req, res, next) {
         } else {
             console.log('data=================', data);
             if (empty(data)) {
-
+                res.json({msg: undefined})
             } else if (data.ttl === 0) {
                 User.remove({msgid: msgid}, function (err) {
                     if (err) {
-
+                        res.json({msg: undefined})
                     } else {
                         res.json({msg: data.msg, nonce: data.nonce, read: 0})
 
                     }
                 })
             } else if (data.ttl === 1) {
-                let conditions = {msgid: msgid};
-                let update = {$set: {read: data.read - 1}};
-                View.update(conditions, update, function (error) {
-                    if (error) {
-                    } else {
-                        console.log('Update success! result==', result);
-                        res.json({msg: data.msg, nonce: data.nonce, read: data.read - 1})
-                    }
+                if ((new Date().getTime() - data.time) > 1000 * 60 * 60 * 24) {
+                    console.log('消息超时，将被删除。。。。。');
+                    //超过24小时
+                    User.remove({msgid: msgid}, function (err) {
+                        res.json({msg: undefined})
+                    })
+                } else {
+                    let conditions = {msgid: msgid};
+                    let update = {$set: {read: data.read - 1}};
+                    View.update(conditions, update, function (error) {
+                        if (error) {
+                        } else {
+                            console.log('Update success! result==', result);
+                            res.json({msg: data.msg, nonce: data.nonce, read: data.read - 1})
+                        }
 
-                });
+                    });
+                }
+
             }
 
         }
