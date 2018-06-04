@@ -1,20 +1,23 @@
 $(document).ready(function () {
     var u = url();
-    if (!is_wxqq()) {
-        $("#share").text("分享: " + u.u);
-    }
+    // if (!is_wxqq()) {
+    //     $("#share").text("分享: " + u.u);
+    // }
     // joke();
     if (document.referrer == "http://kkn.anet6.cc/") {
         $("#cc").hide();
     } else {
-        $('#cc').on('click', function () {
-            if ($('#cc').text() == "看看") {
-                read(u.m, u.p);
-                $('#cc').text("闭上眼睛");
-            } else {
-                window.location.href = "http://kkn.anet6.cc#" + (new Date().getTime());
-            }
-        });
+
+        read(u.m, u.p);
+
+        // $('#cc').on('click', function () {
+        //     if ($('#cc').text() == "看看") {
+        //         read(u.m, u.p);
+        //         $('#cc').text("闭上眼睛");
+        //     } else {
+        //         window.location.href = "http://kkn.anet6.cc#" + (new Date().getTime());
+        //     }
+        // });
     }
 });
 

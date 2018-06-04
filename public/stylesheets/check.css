@@ -1,19 +1,31 @@
 #data {
     display: flex;
     width: 100%;
-    height: 5%;
-
+    height: 10%;
+    align-items: center;
     flex-direction: row;
-
 }
 
-#mixun-icon{
-
-
+#mixun-icon {
+    width: 50px;
+    height: 50px;
 }
 
+#download_description_title {
+}
 
-#download_description{
+#download_description_content {
+    color: grey;
+}
+
+#download_description {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+#download-button {
+    background-color: #41A6F3;
+    color: white;
+    margin-right: 10px;
 }
