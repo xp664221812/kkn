@@ -1,3 +1,10 @@
+
+#mbody {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
 #data {
     display: flex;
     width: 100%;
@@ -7,8 +14,8 @@
 }
 
 #mixun-icon {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
 }
 
 #download_description_title {
@@ -27,5 +34,7 @@
 #download-button {
     background-color: #41A6F3;
     color: white;
+    text-align: center;
+    height: 35px;
     margin-right: 10px;
 }

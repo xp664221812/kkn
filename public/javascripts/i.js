@@ -57,12 +57,12 @@ function post(Read, Cipher, Nonce, Secret) {
             console.log(Data)
             // TTL = Data.ttl;
             $('.hide').show();
-            // $("#url").text("http://kkn.anet6.cc/l?" + Data.msgid + "#" + Secret).autoHeight();
+            $("#url").text("http://kkn.anet6.cc/l?" + Data.msgid + "#" + Secret).autoHeight();
             // $("#url").text("http://127.0.0.1:3000/l?" + Data.msgid + "#" + Secret).autoHeight();
-            $("#url").text("http://47.97.187.29:3000/l?" + Data.msgid + "#" + Secret).autoHeight();
+            // $("#url").text("http://47.97.187.29:3000/l?" + Data.msgid + "#" + Secret).autoHeight();
 
 
-            $("#total").text("您是第" + N + "个想看的人！");
+            // $("#total").text("您是第" + N + "个想看的人！");
         }
     });
 }
