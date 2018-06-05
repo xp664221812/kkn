@@ -61,6 +61,7 @@ router.get('/l', function (req, res, next) {
 
 
 router.post('/api/post', function (req, res, next) {
+    console.log('post=========', req.body);
     let msgid = randomstring.generate(20);
     let body = req.body;
     if (!empty(body)) {
